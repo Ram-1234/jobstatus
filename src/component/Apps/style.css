@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* header of home page */
+.header{
+    /* position: fixed;
+    width: 100%; */
+    background-color: #9e2a2b;
+    margin: 1px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logostyle */
+.joblogo{
+    color: white;
+    font-size: 40px;
+    padding: 5%;
+    margin-left: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header listdiv */
+.headerTab{
+   margin-right: 20%;
+   /* border: 1px solid black; */
+   width: 36%;
+   justify-content: space-evenly;
+}
+/* headerdiv list item */
+.headerTab li{
+    list-style: none;
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px solid green; */
+    width: 20%;
+    text-align: center;
+}
+
+li:hover{
+    transform: scale(1.05);
+}
+.stagingTab,.workingTab{
+  list-style: none;
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+}
+.workingTab ,li{
+    margin-left: 25%;
+}
+
+/* staging compoonet item style */
+.staging_mainDiv{
+    background-color: #a0c4ff;
+    border: .05px solid lightgray;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stage_jobname{
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size: larger;
+}
+
+.stage_jobbutton button{
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: white;
+    padding: 5px;
+}
+
+.stage_jobbutton button:hover{
+   transform: scale(1.02);
+   outline: none;
+   background-color: lightgreen;
+}
+
+/* working compoonet item style */
+
+.working_mainDiv{
+    background-color: #a0c4ff;
+    border: .05px solid lightgray;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.working_jobname{
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size: larger;
+}
+.working_jobstatus{
+    text-transform: capitalize;
+}
+
+.working_jobbutton button{
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: white;
+    padding: 5px;
+}
+
+.working_jobbutton button:hover{
+   transform: scale(1.02);
+   outline: none;
+   background-color: lightgreen;
+}
+
+
+
