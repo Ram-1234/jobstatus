@@ -9,9 +9,9 @@
     width: 100%; */
     background-color: #9e2a2b;
     margin: 1px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -20,7 +20,7 @@
     color: white;
     font-size: 40px;
     padding: 5%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -28,7 +28,7 @@
 .headerTab{
    margin-right: 20%;
    /* border: 1px solid black; */
-   width: 36%;
+   width: 30%;
    justify-content: space-evenly;
 }
 /* headerdiv list item */
@@ -54,6 +54,15 @@ li:hover{
     margin-left: 25%;
 }
 
+/* background theme style */
+.backgroundTheme{
+    /* border: 1px solid white; */
+    margin-right: 0;
+    width: max-content;
+    height: max-content;
+}
+
+
 /* staging compoonet item style */
 .staging_mainDiv{
     background-color: #a0c4ff;
@@ -69,16 +78,18 @@ li:hover{
     font-size: larger;
 }
 
-.stage_jobbutton button{
-    font-size: 15px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: white;
-    padding: 5px;
+.stage_jobstatus{
+    /* border: 1px solid black; */
 }
 
-.stage_jobbutton button:hover{
-   transform: scale(1.02);
+.stage_jobbutton Button{
+    text-transform: uppercase;
+    opacity: 0.8;
+   
+}
+
+.stage_jobbutton Button:hover{
+   transform: scale(1.01);
    outline: none;
    background-color: lightgreen;
 }
@@ -102,15 +113,12 @@ li:hover{
     text-transform: capitalize;
 }
 
-.working_jobbutton button{
-    font-size: 15px;
+.working_jobbutton Button{
     text-transform: uppercase;
-    border-radius: 5px;
-    border: white;
-    padding: 5px;
+    opacity: 0.8;
 }
 
-.working_jobbutton button:hover{
+.working_jobbutton Button:hover{
    transform: scale(1.02);
    outline: none;
    background-color: lightgreen;

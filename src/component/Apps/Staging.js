@@ -1,13 +1,15 @@
 import React from 'react'
+import { Button } from '@material-ui/core';
 
 
 function Staging(props) {
+    console.log(props.uniqueId,"staging")
     return (
-        <div className="staging_mainDiv">
+        <div className="staging_mainDiv" style={{backgroundColor:`${props.color}`}} >
             <div className="stage_jobname">{props.jobname}</div>
             <div className="stage_jobstatus">{props.jobstatus}</div>
             <div className="stage_jobbutton">
-                <button onClick={()=>{}}>start job</button>
+                <Button   variant="contained" color="secondary" onClick={()=> {props.onSubmitstage(props.uniqueId)}}>start job</Button>
             </div>
         </div>
     )
