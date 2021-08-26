@@ -7,7 +7,7 @@ function Working(props) {
             <div className="working_jobname">{props.jobname}</div>
             <div className="working_jobstatus">{props.jobstatus}</div>
             <div className="working_jobbutton">
-                <Button variant="contained" color="secondary" onClick={()=> {props.onSubmitwork(props.uniqueId)}}>job redo</Button>
+                <Button variant="contained" color={`${props.buttoncolor}`} onClick={()=> {props.onSubmitwork(props.uniqueId)}}>job redo</Button>
             </div>
         </div>
     )

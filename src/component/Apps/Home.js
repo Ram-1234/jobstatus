@@ -15,6 +15,9 @@ let styles={
 }
 
 function Home() {
+  const [buttoncolor,setbuttonColor]=useState("secondary")
+  const [stagetab,setstageTab]=useState({borderBottom:"1px solid white"})
+  const [worktab,setworkTab]=useState({borderBottom:"none"})
   const [jobscolor,setjobColor]=useState({backgroundColor:"#a0c4ff"})
   const [headercolor,setheaderColor]=useState({backgroundColor:"#9e2a2b"})
   const [stagelist,setstageList]=useState([...Sdata])
@@ -68,10 +71,25 @@ function Home() {
         if(headercolor.backgroundColor==="#9e2a2b"){
             setheaderColor({backgroundColor:"green"})
             setjobColor({backgroundColor:"white"})
+            setbuttonColor("primary")
         }else{
             setheaderColor({backgroundColor:"#9e2a2b"})
             setjobColor({backgroundColor:"#a0c4ff"})
+            setbuttonColor("secondary")
         }
+    }
+
+    // stage tab handle
+    const stagetabHandle=()=>{
+        setstageTab({borderBottom:"1px solid white"})
+        setworkTab({borderBottom:"none"})
+    }
+
+    // work tab handle
+
+    const worktabHandle=()=>{
+        setworkTab({borderBottom:"1px solid white"})
+        setstageTab({borderBottom:"none"})
     }
 
     return (
@@ -79,14 +97,14 @@ function Home() {
           <Router>
             <div className="header" style={headercolor}>
                  <div className="logodiv">
-                      <h1 className="joblogo">JOBSTATUS...</h1>
+                      <h1 className="joblogo">JOBSTATUS</h1>
                  </div>
               <div className="headerTab">
                 <li>
-                  <NavLink to='/' className="stagingTab" >STAGING</NavLink>
+                  <NavLink to='/' onClick={stagetabHandle} className="stagingTab" style={stagetab}>STAGING</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/working" className="workingTab">WORKING</NavLink>
+                    <NavLink to="/working" onClick={worktabHandle} className="workingTab" style={worktab}>WORKING</NavLink>
                 </li>
               </div>
                <div className="backgroundTheme">
@@ -107,6 +125,7 @@ function Home() {
                         jobstatus={item.jobstatus}
                         onSubmitstage={handlestage}
                         color={jobscolor.backgroundColor}
+                        buttoncolor={buttoncolor}
                         />)})
                     }
                 </Route>
@@ -121,6 +140,7 @@ function Home() {
                         jobstatus={item.jobstatus}
                         onSubmitwork={handlework}
                         color={jobscolor.backgroundColor}
+                        buttoncolor={buttoncolor}
                         />)
                     }
                 </Route>
