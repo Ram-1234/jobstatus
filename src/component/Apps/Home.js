@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+
+import React,{useState,useEffect} from 'react'
 import Job from './Staging'
 import Wip from './Working'
 import './style.css';
@@ -7,7 +8,6 @@ import Wdata from '../woking/workingData';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import { BrowserRouter as Router,Switch, Route, NavLink } from "react-router-dom"; 
-
 
 let styles={
     color:"white",
@@ -20,8 +20,19 @@ function Home() {
   const [worktab,setworkTab]=useState({borderBottom:"none"})
   const [jobscolor,setjobColor]=useState({backgroundColor:"#a0c4ff"})
   const [headercolor,setheaderColor]=useState({backgroundColor:"#9e2a2b"})
-  const [stagelist,setstageList]=useState([...Sdata])
-  const [worklist,setworkList]=useState([...Wdata])
+  const [stagelist,setstageList]=useState([])
+  const [worklist,setworkList]=useState([])
+
+//   useEffect to handle promise data from datafolder/file
+ useEffect(()=>{
+       Sdata.then((d)=>{
+           setstageList(d)
+           
+       })
+       Wdata.then((d)=>[
+           setworkList(d)
+       ])
+ },[])
 
 
     // stage management
@@ -86,7 +97,6 @@ function Home() {
     }
 
     // work tab handle
-
     const worktabHandle=()=>{
         setworkTab({borderBottom:"1px solid white"})
         setstageTab({borderBottom:"none"})
@@ -117,7 +127,7 @@ function Home() {
                 <Route exact path="/">
                     {
                         stagelist.map((item)=> {
-                            console.log(item.id)
+                        //  staging data map component name as Job
                         return( <Job 
                         key={item.id}             
                         uniqueId={item.id}
@@ -134,6 +144,7 @@ function Home() {
                 <Route exact path="/working">
                      {
                         worklist.map((item)=> <Wip 
+                        // working data map component name as Wip(work in progress)
                         key={item.id}
                         uniqueId={item.id}
                         jobname={item.jobname}
